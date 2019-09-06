@@ -16,7 +16,6 @@ export class smallTitle extends Component {
         return (
             <ThemeProvider theme={this.props.theme.theme}>
                 <Title>{this.props.message}</Title>
-                
             </ThemeProvider>
         )
     }

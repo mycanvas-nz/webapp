@@ -6,12 +6,8 @@ import {animateScroll} from 'react-scroll';
 
 import Logo from '../components/titles/Logo'
 import MainTitle from '../components/titles/mainTitle'
-import SmallTitle from '../components/titles/smallTitle'
 
-import EventSlider from '../components/EventSlider'
-import RecommendedSlider from '../components/RecommendedSlider';
-
-import AppletGrid from '../components/AppletGrid';
+import ThemeSelector from '../components/ThemeSelector'
 
 import styled, {ThemeProvider} from 'styled-components'
 import {Page} from './style'
@@ -25,28 +21,19 @@ const Background = styled.div`
 
 `;
 
-class Dashboard extends Component {
+class Settings extends Component {
     componentDidMount() {
         document.title = "Canvas - Mental Health App!"
         animateScroll.scrollToTop();
     }
-
     render() {
-
-        const AppletTop = [this.props.applets[0], this.props.applets[1]]
-
         return (
             <ThemeProvider theme={this.props.theme.theme}>
                 <Background>
                     <Logo/>
-                    <MainTitle message={"My Dashboard"}/>
+                    <MainTitle message={"Settings"}/>
                     <Page>
-                        <SmallTitle message={"Try Theses"} />
-                        <RecommendedSlider/>
-                        <SmallTitle message={"Quick Access"} />
-                        <AppletGrid applets={AppletTop}/>
-                        <SmallTitle message={"nearby events"} />
-                        <EventSlider/>
+                        <ThemeSelector/>
                     </Page>
                 </Background>
             </ThemeProvider>
@@ -57,9 +44,8 @@ class Dashboard extends Component {
 function mapStateToProps(state){
     return {
         theme: state.Theme,
-        applets: state.Applets
     }
 }
 
 
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps)(Settings)

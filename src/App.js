@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 
 import Routes from './Routes';
 
+import Navbar from './components/Navbar'
+
 const baseURL = "/webapp/";
 
 
@@ -14,6 +16,7 @@ class App extends Component {
       
         <BrowserRouter basename={baseURL}>
             <Routes/> 
+            <Navbar/>
         </BrowserRouter>
 
     )

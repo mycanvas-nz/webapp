@@ -8,13 +8,12 @@ import Logo from '../components/titles/Logo'
 import MainTitle from '../components/titles/mainTitle'
 import SmallTitle from '../components/titles/smallTitle'
 
-import EventSlider from '../components/EventSlider'
-import RecommendedSlider from '../components/RecommendedSlider';
 
 import AppletGrid from '../components/AppletGrid';
 
 import styled, {ThemeProvider} from 'styled-components'
 import {Page} from './style'
+
 
 const Background = styled.div`
     background: ${props => props.theme.primacyColor};
@@ -25,28 +24,28 @@ const Background = styled.div`
 
 `;
 
-class Dashboard extends Component {
+class App extends Component {
     componentDidMount() {
         document.title = "Canvas - Mental Health App!"
         animateScroll.scrollToTop();
     }
-
     render() {
-
-        const AppletTop = [this.props.applets[0], this.props.applets[1]]
-
+        const AppletFav = this.props.applets.filter(function(applet) {
+            return applet.fav === true
+        })
+        const AppletOther = this.props.applets.filter(function(applet) {
+            return applet.fav === false
+        })
         return (
             <ThemeProvider theme={this.props.theme.theme}>
                 <Background>
                     <Logo/>
-                    <MainTitle message={"My Dashboard"}/>
+                    <MainTitle message={"Apps"}/>
                     <Page>
-                        <SmallTitle message={"Try Theses"} />
-                        <RecommendedSlider/>
-                        <SmallTitle message={"Quick Access"} />
-                        <AppletGrid applets={AppletTop}/>
-                        <SmallTitle message={"nearby events"} />
-                        <EventSlider/>
+                        <SmallTitle message={"Favorites"} />
+                        <AppletGrid applets={AppletFav}/>
+                        <SmallTitle message={"Other"} />
+                        <AppletGrid applets={AppletOther}/>
                     </Page>
                 </Background>
             </ThemeProvider>
@@ -57,9 +56,9 @@ class Dashboard extends Component {
 function mapStateToProps(state){
     return {
         theme: state.Theme,
-        applets: state.Applets
+        applets: state.Applets,
     }
 }
 
 
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps)(App)

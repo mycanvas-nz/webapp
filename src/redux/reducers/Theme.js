@@ -6,18 +6,24 @@ const Theme1 = {
     primacyColor: Theme1Colors.primacyColor,
     primacyColor2: Theme1Colors.primacyColor2,
     secondaryColor: Theme1Colors.secondaryColor,
+    circColor1: Theme1Colors.circColor1,
+    circColor2: Theme1Colors.circColor2,
 }
 
 const Theme2 = {
     primacyColor: Theme2Colors.primacyColor,
     primacyColor2: Theme2Colors.primacyColor2,
     secondaryColor: Theme2Colors.secondaryColor,
+    circColor1: Theme2Colors.circColor1,
+    circColor2: Theme2Colors.circColor2,
 }
 
 const Theme3 = {
     primacyColor: Theme3Colors.primacyColor,
     primacyColor2: Theme3Colors.primacyColor2,
     secondaryColor: Theme3Colors.secondaryColor,
+    circColor1: Theme3Colors.circColor1,
+    circColor2: Theme3Colors.circColor2,
 }
 
 const initState = {
