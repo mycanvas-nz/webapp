@@ -1,4 +1,7 @@
 import {EVENT_FAVORITE} from '../actionTypes';
+import OutbackForest from '../../imgs/outback-forest.jpg'
+import AucklandCity from '../../imgs/auckland-cty.jpg'
+import Bush from '../../imgs/bush.jpg'
 
 const initState = [
     {
@@ -14,7 +17,7 @@ const initState = [
         desc: "An event held in the outdoors of New Zealand, a place for people to meet and great them selfs and others.",
         price: 0,
         numofdays: 0,
-        imgURL: "https://images.pexels.com/photos/462146/pexels-photo-462146.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        imgURL: OutbackForest
       },
       {
         id: 1,
@@ -29,7 +32,7 @@ const initState = [
         desc: "An event held in the outdoors of New Zealand, a place for people to meet and great them selfs and others.",
         price: 4.99,
         numofdays: 0,
-        imgURL: "http://www.ormiston.school.nz/Images/Assets/3303/14"
+        imgURL: Bush,
       },
       {
         id: 3,
@@ -44,7 +47,7 @@ const initState = [
         desc: "An event held in the outdoors of New Zealand, a place for people to meet and great them selfs and others.",
         price: 4.99,
         numofdays: 0,
-        imgURL: "http://www.ormiston.school.nz/Images/Assets/3303/14"
+        imgURL: AucklandCity,
       },
       {
         id: 4,
@@ -59,7 +62,7 @@ const initState = [
         desc: "An event held in the outdoors of New Zealand, a place for people to meet and great them selfs and others.",
         price: 4.99,
         numofdays: 0,
-        imgURL: "https://www.newzealand.com/assets/Tourism-NZ/Hamilton-Waikato/1ad9e4d490/img-1536906824-5931-32566-497A34AC-96A9-5F71-887FECFAC32F2EC7__FocalPointCropWzQyNyw2NDAsNTAsNTAsODUsImpwZyIsNjUsMi41XQ.jpg"
+        imgURL: Bush,
       },
 ]
 

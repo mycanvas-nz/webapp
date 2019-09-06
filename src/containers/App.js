@@ -7,7 +7,7 @@ import {animateScroll} from 'react-scroll';
 import Logo from '../components/titles/Logo'
 import MainTitle from '../components/titles/mainTitle'
 import SmallTitle from '../components/titles/smallTitle'
-
+import Footer from '../components/titles/Footer'
 
 import AppletGrid from '../components/AppletGrid';
 
@@ -46,6 +46,7 @@ class App extends Component {
                         <AppletGrid applets={AppletFav}/>
                         <SmallTitle message={"Other"} />
                         <AppletGrid applets={AppletOther}/>
+                        <Footer/>
                     </Page>
                 </Background>
             </ThemeProvider>

@@ -14,9 +14,10 @@ const Container = styled.div`
     left: 0px;
     bottom: 0px;
     display: flex;
-    padding: 10px 30px;
+    padding: 15px 30px;
     z-index: 99;
     background: #fff;
+    border-top: solid 2px ${props => props.theme.primacyColor};
 `;
 
 const Name = styled.h5`

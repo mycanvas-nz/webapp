@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
+import { Link } from 'react-router-dom'
+
 const Applet = styled.div`
   height: 105px;
   width: 100%;
@@ -71,7 +73,7 @@ const Holder = styled.div`
 
 const Text = styled.h1`
   margin:0 auto;
-  padding: 10px;
+  padding: 11px 10px;
   color:#fff;
   font-size: 1.7em;
   text-transform: uppercase;
@@ -110,14 +112,14 @@ export class AppletIcon extends Component {
 
         const info = this.props.info
         return (
-            <div>
+            <Link to={info.link}>
                 <Applet>
                     {this.RenderCirc()}
                     <Holder>
                         <Text>{info.icon} <br/> {info.name}</Text>
                     </Holder>
                 </Applet>
-            </div>
+            </Link>
         )
     }
 }

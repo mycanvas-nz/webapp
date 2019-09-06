@@ -6,7 +6,6 @@ import AppletIcon from './AppletIcon';
 
 const Grid = styled.div`
   display:grid;
-  margin: 10px 0px;
   grid-template-columns: 1fr 1fr;
   grid-gap: 6px;
 `;

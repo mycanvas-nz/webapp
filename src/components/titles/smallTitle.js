@@ -5,7 +5,7 @@ import styled, {ThemeProvider} from 'styled-components'
 
 const Title = styled.h3`
   font-size: 1.1em;
-  margin: 0;
+  margin: 10px 0px;
   text-transform: lowercase;
   font-weight: 400;
   color: ${props => props.theme.primacyColor};

@@ -7,6 +7,7 @@ import {animateScroll} from 'react-scroll';
 import Logo from '../components/titles/Logo'
 import MainTitle from '../components/titles/mainTitle'
 import SmallTitle from '../components/titles/smallTitle'
+import Footer from '../components/titles/Footer'
 
 import EventSlider from '../components/EventSlider'
 import RecommendedSlider from '../components/RecommendedSlider';
@@ -47,6 +48,7 @@ class Dashboard extends Component {
                         <AppletGrid applets={AppletTop}/>
                         <SmallTitle message={"nearby events"} />
                         <EventSlider/>
+                        <Footer/>
                     </Page>
                 </Background>
             </ThemeProvider>

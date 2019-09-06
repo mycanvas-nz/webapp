@@ -6,6 +6,7 @@ import {animateScroll} from 'react-scroll';
 
 import Logo from '../components/titles/Logo'
 import MainTitle from '../components/titles/mainTitle'
+import Footer from '../components/titles/Footer'
 
 import ThemeSelector from '../components/ThemeSelector'
 
@@ -34,6 +35,7 @@ class Settings extends Component {
                     <MainTitle message={"Settings"}/>
                     <Page>
                         <ThemeSelector/>
+                        <Footer/>
                     </Page>
                 </Background>
             </ThemeProvider>

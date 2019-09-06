@@ -11,5 +11,5 @@ body {
   right: 50% !important;
   margin-left: -50vw !important;
   margin-right: -50vw !important;
-  padding-left: 30px;
+  padding-left: 30px !important;
 }
