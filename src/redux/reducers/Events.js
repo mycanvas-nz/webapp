@@ -1,7 +1,7 @@
 import {EVENT_FAVORITE} from '../actionTypes';
-import OutbackForest from '../../imgs/outback-forest.jpg'
-import AucklandCity from '../../imgs/auckland-cty.jpg'
-import Bush from '../../imgs/bush.jpg'
+import OutbackForest from '../../imgs/outback-forest-min.jpg'
+import AucklandCity from '../../imgs/auckland-cty-min.jpg'
+import Bush from '../../imgs/bush-min.jpg'
 
 const initState = [
     {

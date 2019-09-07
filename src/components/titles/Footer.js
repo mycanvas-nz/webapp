@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
-const VersionNumber = "v.015180512";
+const VersionNumber = "v.01519987";
 
 const Label = styled.h5`
     font-size: 1.1em;
