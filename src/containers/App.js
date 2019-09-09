@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 import {animateScroll} from 'react-scroll';
 
+import {SHOW_NAVBAR} from '../redux/actionTypes';
+
 import Logo from '../components/titles/Logo'
 import MainTitle from '../components/titles/mainTitle'
 import SmallTitle from '../components/titles/smallTitle'
@@ -11,24 +13,15 @@ import Footer from '../components/titles/Footer'
 
 import AppletGrid from '../components/AppletGrid';
 
-import styled, {ThemeProvider} from 'styled-components'
-import {Page} from './style'
-
-
-const Background = styled.div`
-    background: ${props => props.theme.primacyColor};
-    background: -moz-linear-gradient(left,  ${props => props.theme.primacyColor} 0%, ${props => props.theme.primacyColor2} 100%);
-    background: -webkit-linear-gradient(left,  ${props => props.theme.primacyColor} 0%, ${props => props.theme.primacyColor2} 100%);
-    background: linear-gradient(to right,  ${props => props.theme.primacyColor} 0%, ${props => props.theme.primacyColor2} 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='${props => props.theme.primacyColor}', endColorstr='${props => props.theme.primacyColor2}',GradientType=1 );
-
-`;
+import {Page,Background} from './style'
 
 class App extends Component {
     componentDidMount() {
         document.title = "Canvas - Mental Health App!"
         animateScroll.scrollToTop();
+        this.props.showNav();
     }
+
     render() {
         const AppletFav = this.props.applets.filter(function(applet) {
             return applet.fav === true
@@ -37,7 +30,6 @@ class App extends Component {
             return applet.fav === false
         })
         return (
-            <ThemeProvider theme={this.props.theme.theme}>
                 <Background>
                     <Logo/>
                     <MainTitle message={"Apps"}/>
@@ -49,17 +41,20 @@ class App extends Component {
                         <Footer/>
                     </Page>
                 </Background>
-            </ThemeProvider>
         )
     }
 }
 
 function mapStateToProps(state){
     return {
-        theme: state.Theme,
         applets: state.Applets,
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        showNav: () => { dispatch({type: SHOW_NAVBAR, value: null})}
+    }
+}
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps,mapDispatchToProps)(App)

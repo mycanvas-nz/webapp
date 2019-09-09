@@ -6,6 +6,10 @@ import Routes from './Routes';
 
 import Navbar from './components/Navbar'
 
+import {ThemeProvider} from 'styled-components'
+
+import { connect } from 'react-redux'
+
 const baseURL = "/webapp/";
 
 
@@ -13,16 +17,23 @@ class App extends Component {
 
   render() {
     return (
-      
-        <BrowserRouter basename={baseURL}>
-            <Routes/> 
-            <Navbar/>
-        </BrowserRouter>
+        <ThemeProvider theme={this.props.theme.theme}>
+          <BrowserRouter basename={baseURL}>
+              <Routes/> 
+              <Navbar/>
+          </BrowserRouter>
+        </ThemeProvider>
 
     )
   }
 }
 
+function mapStateToProps(state){
+  return {
+      theme: state.Theme,
+      applets: state.Applets
+  }
+}
 
-export default App;
+export default connect(mapStateToProps)(App)
 

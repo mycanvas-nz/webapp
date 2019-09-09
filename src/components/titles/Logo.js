@@ -2,11 +2,19 @@ import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
     display: flex;
     align-items: center;
-    padding: 30px;
+    padding: 30px 30px 10px;
+`;
+
+
+const LinkTo = styled(Link)`
+  text-decoration: none;
 `;
 
 const Title = styled.h1`
@@ -27,12 +35,25 @@ const MiniTitle = styled.h4`
 
 
 export default class Logo extends Component {
+    
     render() {
-        return (
-            <Wrapper>
-                <Title>CANVAS</Title>
-                <MiniTitle>closed beta</MiniTitle>
-            </Wrapper>
-        )
+        if(this.props.isApplet){
+            console.log(this)
+            return (
+                <Wrapper>
+                    <LinkTo to="/apps">
+                        <Title><FontAwesomeIcon icon={faArrowLeft}/> {this.props.title}</Title>
+                    </LinkTo>
+                    <MiniTitle>closed beta</MiniTitle>
+                </Wrapper>
+            )
+        } else {
+            return (
+                <Wrapper>
+                    <Title>CANVAS</Title>
+                    <MiniTitle>closed beta</MiniTitle>
+                </Wrapper>
+            )
+        }
     }
 }

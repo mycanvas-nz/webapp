@@ -1,2 +1,4 @@
 export const CHANGE_THEME = "CHANGE_THEME";
 export const EVENT_FAVORITE = "EVENT_FAVORITE";
+export const HIDE_NAVBAR = "HIDE_NAVBAR";
+export const SHOW_NAVBAR = "SHOW_NAVBAR";

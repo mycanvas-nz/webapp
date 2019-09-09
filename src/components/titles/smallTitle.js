@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import styled, {ThemeProvider} from 'styled-components'
+import styled from 'styled-components'
 
 const Title = styled.h3`
   font-size: 1.1em;
@@ -14,9 +14,7 @@ const Title = styled.h3`
 export class smallTitle extends Component {
     render() {
         return (
-            <ThemeProvider theme={this.props.theme.theme}>
-                <Title>{this.props.message}</Title>
-            </ThemeProvider>
+            <Title>{this.props.message}</Title>
         )
     }
 }

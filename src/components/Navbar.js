@@ -6,7 +6,17 @@ import {faHome, faStar, faCog} from '@fortawesome/free-solid-svg-icons';
 
 import { NavLink } from 'react-router-dom';
 
-import styled , {ThemeProvider} from 'styled-components'
+import styled , {keyframes} from 'styled-components'
+
+const appear = keyframes`
+  from {
+    bottom: -50px;
+  }
+
+  to {
+    bottom: 0px
+  }
+`;
 
 const Container = styled.div`
     position: fixed;
@@ -17,6 +27,7 @@ const Container = styled.div`
     padding: 15px 30px;
     z-index: 99;
     background: #fff;
+    animation: ${appear} 0.8s ease-out;
     border-top: solid 2px ${props => props.theme.primacyColor};
 `;
 
@@ -48,25 +59,29 @@ const Settings = styled(Home)`
 
 
 export class Navbar extends Component {
+
     render() {
-        return (
-            <ThemeProvider theme={this.props.theme.theme}>
-                <Container>
-                    <Home exact to="/">
-                        <FontAwesomeIcon size="2x" icon={faHome}/>
-                        <Name>Home</Name>
-                    </Home>
-                    <Apps exact to="/apps">
-                        <FontAwesomeIcon  size="2x" icon={faStar}/>
-                        <Name>Apps</Name>
-                    </Apps>
-                    <Settings exact to="/settings">
-                        <FontAwesomeIcon  size="2x" icon={faCog}/>
-                        <Name>Settings</Name>
-                    </Settings>
-                </Container>
-            </ThemeProvider>
-        )
+        if(this.props.theme.navbar){
+            return (
+                    <Container>
+                        <Home exact to="/">
+                            <FontAwesomeIcon size="2x" icon={faHome}/>
+                            <Name>Home</Name>
+                        </Home>
+                        <Apps exact to="/apps">
+                            <FontAwesomeIcon  size="2x" icon={faStar}/>
+                            <Name>Apps</Name>
+                        </Apps>
+                        <Settings exact to="/settings">
+                            <FontAwesomeIcon  size="2x" icon={faCog}/>
+                            <Name>Settings</Name>
+                        </Settings>
+                    </Container>
+            )
+        } else {
+            return null
+        }
+        
     }
 }
 

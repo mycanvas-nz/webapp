@@ -1,4 +1,4 @@
-import {CHANGE_THEME} from '../actionTypes';
+import {CHANGE_THEME, HIDE_NAVBAR, SHOW_NAVBAR} from '../actionTypes';
 
 import {Theme1Colors, Theme2Colors, Theme3Colors} from '../../constants'
 
@@ -28,6 +28,7 @@ const Theme3 = {
 
 const initState = {
     theme: Theme1,
+    navbar: true,
 }
   
 const Theme = (state = initState, action) => {
@@ -55,7 +56,16 @@ const Theme = (state = initState, action) => {
                     theme: Theme1,
                 }
         }
-            
+        case HIDE_NAVBAR:
+            return {
+                ...state,
+                navbar: false,
+            }
+        case SHOW_NAVBAR: 
+            return {
+                ...state,
+                navbar: true,
+            }
         default:
             return state
     }

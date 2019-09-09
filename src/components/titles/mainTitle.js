@@ -8,7 +8,7 @@ const Title = styled.h2`
   text-transform: lowercase;
   color: #fff;
   font-weight: 400;
-  padding 12px 30px;
+  padding 32px 30px 12px;
 `;
 
 export default class mainTitle extends Component {
