@@ -38,7 +38,6 @@ export default class Logo extends Component {
     
     render() {
         if(this.props.isApplet){
-            console.log(this)
             return (
                 <Wrapper>
                     <LinkTo to="/apps">

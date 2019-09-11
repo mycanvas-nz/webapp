@@ -13,3 +13,7 @@ body {
   margin-right: -50vw !important;
   padding-left: 30px !important;
 }
+
+.display-music{
+  display:none;
+}

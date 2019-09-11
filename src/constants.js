@@ -21,3 +21,12 @@ export const Theme3Colors = {
     circColor1: "#5ACCF5",
     circColor2: "#F55A5A",
 }
+
+export const MusicGenres = {
+    Pop: "Pop",
+    Rock: "Rock",
+    Rnb: "Rnb",
+    Jazz: "Jazz",
+    Funk: "Funk",
+    Mixed: "Mixed",
+}

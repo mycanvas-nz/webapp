@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import {MusicGenres} from '../constants';
+
 import {animateScroll} from 'react-scroll';
 
 import {HIDE_NAVBAR} from '../redux/actionTypes';
+
+import AlbumSlider from '../components/AlbumSlider';
 
 import Logo from '../components/titles/Logo'
 import InfoText from '../components/titles/infoText'
@@ -21,14 +25,25 @@ export class Music extends Component {
     }
 
     render() {
+
+        const collections = this.props.albums.albumsList.filter(function(albums) {
+            return albums.isCollection === true
+        })
+        const rock = this.props.albums.albumsList.filter(function(albums) {
+            return albums.genres === MusicGenres.Rock
+        })
+
         return (
             <Background>
                 <Logo isApplet title={"Music"}/>
                 <InfoText message={"some songs have been added by other users and some have been added by canvas."}/>
                 <Page>
                     <SmallTitle message={"All"}/>
+                    <AlbumSlider albums={this.props.albums.albumsList}/>
                     <SmallTitle message={"collections"}/>
-                    <SmallTitle message={"chill/relax"}/>
+                    <AlbumSlider albums={collections}/>
+                    <SmallTitle message={"rock"}/>
+                    <AlbumSlider albums={rock}/>
                     <Footer/>
                 </Page>
             </Background>
@@ -39,6 +54,7 @@ export class Music extends Component {
 function mapStateToProps(state){
     return {
         theme: state.Theme,
+        albums: state.Albums
     }
 }
 
